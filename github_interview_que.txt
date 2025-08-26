@@ -1,0 +1,169 @@
+🔹 Git Interview Questions & Answers (with Examples)
+1. What is the difference between Git and GitHub?
+
+Git: Local version control tool → installed on system.
+
+GitHub: Cloud hosting platform for Git repositories.
+
+👉 Example:
+You can use Git even without internet, but GitHub is needed for team collaboration.
+
+2. Explain the Git workflow.
+
+Working Directory → modify files.
+
+Staging Area → git add stores changes temporarily.
+
+Local Repository → git commit saves permanently.
+
+Remote Repository → git push sends changes to GitHub.
+
+👉 Example:
+Write code → git add . → git commit -m "msg" → git push origin main.
+
+3. What is the difference between git pull and git fetch?
+
+git fetch → Downloads changes from remote but doesn’t merge.
+
+git pull → Fetch + Merge changes automatically.
+
+👉 Real-time:
+If you want to first review changes before merging, use fetch.
+
+4. What are branches in Git?
+
+A branch is a copy of the code where you can work independently.
+
+main is stable, while features are developed in separate branches.
+
+👉 Example:
+
+git checkout -b feature-login
+
+
+Now you can work on login feature without affecting main.
+
+5. How do you resolve merge conflicts?
+
+A merge conflict happens when two people edit the same part of a file.
+Steps:
+
+Git marks conflict with <<<<<<<, =======, >>>>>>>.
+
+Manually edit file to keep correct version.
+
+Stage and commit again.
+
+👉 Real-time:
+Two developers changed config.yaml in different ways → conflict → resolve → commit.
+
+6. What is .gitignore?
+
+File that tells Git which files NOT to track.
+
+👉 Example .gitignore:
+
+node_modules/
+.env
+*.log
+
+
+This avoids pushing unnecessary or sensitive files.
+
+7. What is Git stash?
+
+Stash is used to temporarily save uncommitted changes.
+
+👉 Example:
+
+git stash      # Save work
+git checkout main
+git pull
+git checkout feature
+git stash pop  # Restore work
+
+
+Useful when switching branches in middle of work.
+
+8. Difference between git reset, git revert, and git checkout?
+
+git reset → Undo commits (history changes).
+
+git revert → Creates new commit that undoes changes (safe in team).
+
+git checkout → Switch branches or restore files.
+
+👉 Real-time:
+
+If commit is wrong → use revert in team (keeps history).
+
+If working alone → reset is fine.
+
+9. What is the difference between merge and rebase?
+
+Merge: Combines branches with a new commit. Keeps history.
+
+Rebase: Moves branch on top of another. Makes history linear.
+
+👉 Example:
+
+Merge → Better for teamwork (history preserved).
+
+Rebase → Cleaner history (used in solo projects).
+
+10. What is a detached HEAD in Git?
+
+HEAD → pointer to current branch.
+
+Detached HEAD happens when you checkout a commit instead of a branch.
+
+👉 Example:
+
+git checkout abc123   # commit ID
+
+
+Now HEAD is detached → not on any branch.
+
+11. What is a Pull Request (PR)?
+
+A request to merge your branch into main (done on GitHub/GitLab).
+
+Allows code review, testing, and approval before merging.
+
+👉 Example:
+You push feature-api → create PR → team reviews → merge into main.
+
+12. What is the difference between git clone and git fork?
+
+Clone → Copy repo to local.
+
+Fork → Copy repo into your GitHub account (used in open source).
+
+13. How do you squash commits?
+
+Squashing = Combine multiple commits into one.
+
+git rebase -i HEAD~3
+
+
+Choose squash → creates single commit.
+
+👉 Example:
+3 commits like "typo fix", "small update", "final fix" → squash into "Fixed login bug".
+
+14. What is git cherry-pick?
+
+Apply a specific commit from one branch into another.
+
+👉 Example:
+
+git cherry-pick abc123
+
+
+Useful if only 1 commit needs to be applied instead of full branch.
+
+15. How do you check difference between commits?
+git diff commit1 commit2
+
+
+Shows line-by-line changes between two commits.

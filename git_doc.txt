@@ -1,0 +1,130 @@
+5. Basic Git Commands
+a) Initialize a Repo    
+git init
+
+
+Creates a new Git repo in the folder.
+
+b) Clone a Repo
+git clone <repo-url>
+
+
+Makes a copy of an existing repo from GitHub to your local system.
+
+c) Check Repo Status
+git status
+
+
+Shows which files are modified, staged, or untracked.
+
+d) Add Files to Staging
+git add file.txt        # Add single file
+git add .               # Add all files
+
+e) Commit Changes
+git commit -m "Added login feature"
+
+
+Saves changes permanently in repo history.
+
+f) View History
+git log
+
+
+Shows all commits with author, date, and message.
+
+g) Push Changes to Remote
+git push origin main
+
+
+Sends local commits to GitHub (remote repo).
+👉 origin = remote name, main = branch.
+
+h) Pull Updates from Remote
+git pull origin main
+
+
+Gets latest changes from GitHub into your local repo.
+
+6. Branches
+
+A branch is like a separate line of development.
+
+main (or master) is the default branch.
+
+Developers create new branches to add features/bug fixes without affecting main.
+
+👉 Example:
+
+git branch feature-login    # Create branch
+git checkout feature-login  # Switch to branch
+git checkout -b feature-logout # Create + Switch
+git merge feature-login     # Merge changes into main
+
+7. Undo / Fix Mistakes
+
+Unstage a file:
+
+git reset file.txt
+
+
+Undo last commit (keep changes):
+
+git reset --soft HEAD~1
+
+
+Undo last commit (remove changes):
+
+git reset --hard HEAD~1
+
+8. Stash (Temporary Save)
+
+If you’re in the middle of work but need to switch branches quickly:
+
+git stash
+git stash pop
+
+
+👉 Saves your work temporarily and restores it later.
+
+9. Collaboration (Teamwork)
+
+Everyone clones the repo.
+
+Developers create feature branches.
+
+Push changes → create a Pull Request (PR) on GitHub → reviewed → merged to main.
+
+10. .gitignore
+
+A file to tell Git which files NOT to track.
+👉 Example:
+
+node_modules/
+*.log
+.env
+
+🔹 Quick Workflow Example
+
+Clone project:
+
+git clone https://github.com/user/project.git
+
+
+Create branch:
+
+git checkout -b feature-api
+
+
+Make changes, add, commit:
+
+git add .
+git commit -m "Added API endpoints"
+
+
+Push branch:
+
+git push origin feature-api
+
+
+Create PR on GitHub → Merge → Done 🎉
