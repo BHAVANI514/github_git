@@ -6,12 +6,16 @@ git init
 Creates a new Git repo in the folder.
 
 b) Clone a Repo
+
+
+
 git clone <repo-url>
 
 
 Makes a copy of an existing repo from GitHub to your local system.
 
 c) Check Repo Status
+
 git status
 
 
